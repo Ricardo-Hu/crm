@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mage.crm.dao.UserDao">
+    <sql id="user_columns">
+        id,user_name as userName, user_pwd as userPwd,true_name as trueName,
+                phone,email,is_valid as isValid,create_date as createDate,update_date as updateDate
+    </sql>
+
+    <select id="queryUserByName" parameterType="string" resultType="user">
+        select <include refid="user_columns"/>
+        from t_user where user_name = #{userName}
+    </select>
+    
+    <select id="queryUserById" parameterType="string" resultType="user">
+        select <include refid="user_columns"/>
+        from t_user where id = #{userId}
+    </select>
+
+    <update id="updatePwd">
+        update t_user set user_pwd=#{userPwd}
+        where id=#{id}
+    </update>
+</mapper>
