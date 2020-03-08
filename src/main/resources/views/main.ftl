@@ -1,7 +1,7 @@
 <html>
 <head>
     <#include "common.ftl" >
-    <title>Crm | 后台主页</title>
+    <title>DGJ | 后台主页</title>
     <script type="text/javascript" src="${ctx}/static/js/main.js"></script>
 </head>
 <body class="easyui-layout">
@@ -20,7 +20,7 @@
 <div region="center">
     <div class="easyui-tabs" fit="true" border="false" id="tabs">
         <div title="首页" data-options="iconCls:'icon-home'">
-            <div align="center" style="padding-top: 100px"><font color="blue" size="10">欢迎使用Crm后台管理系统</font></div>
+            <div align="center" style="padding-top: 100px"><font color="blue" size="10">欢迎使用DGJ后台管理系统</font></div>
         </div>
     </div>
 </div>
@@ -66,9 +66,9 @@
 
 </div>
 <div region="south"  style="height:55px;background-color: #E0ECFF" align="center">
-    版本所有 上海尚学堂 <a href="http://www.shsxt.com" target="_blank">www.shsxt.com</a>(2016-2026)<br/>
-    上海尚学堂地址：上海市松江区荣乐东路2369弄45号绿地伯顿大厦2层 咨询电话：021-67690939<br/>
-	 上海尚学堂智能科技有限公司 的icp备案号 （沪ICP备16053543号）
+         HXX <a href="http://www.bilibili.com" target="_blank">www.hxx.com</a>(2020-2026)<br/>
+        欢迎使用大管家固定资产管理系统 咨询电话：110<br/>
+
 </div>
 
 

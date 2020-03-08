@@ -1,14 +1,21 @@
 package com.mage.dgj.controller;
 
 import com.mage.base.BaseController;
+import com.mage.dgj.service.UserService;
+import com.mage.dgj.util.LoginUserUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class IndexController extends BaseController {
+
+    @Resource
+    private UserService userService;
     /**
      * 登录页面
      * */
@@ -23,14 +30,13 @@ public class IndexController extends BaseController {
      * */
     @RequestMapping("main")
     public String main(HttpServletRequest request){
-        request.setAttribute("ctx",request.getContextPath());
+        /**
+         * 获取userId
+         * */
+        Integer userId = LoginUserUtil.releaseUserIdFromCookie(request);
+        request.setAttribute("user",userService.selectByPrimaryKey(userId));
         return "main";
     }
 
-    @RequestMapping("success")
-    @ResponseBody
-    public String success(){
-        return "success";
-    }
 
 }

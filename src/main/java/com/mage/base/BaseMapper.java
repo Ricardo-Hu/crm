@@ -1,5 +1,6 @@
 package com.mage.base;
 
+import com.mage.dgj.vo.User;
 import org.springframework.dao.DataAccessException;
 
 import java.util.List;
@@ -53,4 +54,5 @@ public interface BaseMapper<T,ID> {
      * 批量删除
      * */
     Integer deleteBath(ID[] ids) throws DataAccessException;
+
 }

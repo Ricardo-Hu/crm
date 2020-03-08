@@ -46,35 +46,35 @@ public abstract class BaseService<T,ID> {
     /**
      * 多条件查询
      * */
-    List<T> selectByParams(BaseQuery baseQuery) throws DataAccessException{
+    public List<T> selectByParams(BaseQuery baseQuery) throws DataAccessException{
         return baseMapper.selectByParams(baseQuery);
     }
 
     /**
      * 更新单条记录
      * */
-    Integer updateByPrimaryKeySelective(T entity) throws DataAccessException{
+    public Integer updateByPrimaryKeySelective(T entity) throws DataAccessException{
         return baseMapper.updateByPrimaryKeySelective(entity);
     }
 
     /**
      * 批量更新
      * */
-    Integer updateBatch(List<T> entities) throws DataAccessException{
+    public Integer updateBatch(List<T> entities) throws DataAccessException{
         return updateBatch(entities);
     }
 
     /**
      * 删除单条记录
      * */
-    Integer deleteByPrimaryKey(ID id) throws DataAccessException{
+    public Integer deleteByPrimaryKey(ID id) throws DataAccessException{
         return deleteByPrimaryKey(id);
     }
 
     /**
      * 批量删除
      * */
-    Integer deleteBath(ID[] ids) throws DataAccessException{
+    public Integer deleteBath(ID[] ids) throws DataAccessException{
         return deleteBath(ids);
     }
 

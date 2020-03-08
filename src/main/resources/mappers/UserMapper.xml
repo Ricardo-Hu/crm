@@ -15,6 +15,12 @@
   <sql id="Base_Column_List" >
     id, user_name, user_pwd, true_name, email, phone, is_valid, create_date, update_date
   </sql>
+  <select id="queryUserByUserName" resultType="com.mage.dgj.vo.User" parameterType="string">
+    select
+    <include refid="Base_Column_List"/>
+    from t_user
+    where is_valid=1 and user_name=#{userName}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

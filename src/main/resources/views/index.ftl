@@ -95,8 +95,8 @@
     <!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
-   好好学习<br/>
-    天天向上
+   好好学习,天天向上<br/>
+    欢迎使用大管家固定资产管理系统
 </div>
 
 <!-- END JAVASCRIPTS -->
