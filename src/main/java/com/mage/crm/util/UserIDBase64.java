@@ -1,4 +1,4 @@
-package com.mage.dgj.util;
+package com.mage.crm.util;
 
 import org.apache.commons.lang3.StringUtils;
 

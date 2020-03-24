@@ -1,4 +1,4 @@
-package com.mage.dgj.util;
+package com.mage.crm.util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

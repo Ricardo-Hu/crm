@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>DGJ | 登录-注册</title>
+    <title>Crm | 登录-注册</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -36,7 +36,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    <h3 class="form-title">DGJ登录</h3>
+    <h3 class="form-title">Crm登录</h3>
     <div class="alert alert-danger display-hide">
         <button class="close" data-close="alert"></button>
         <span>
@@ -95,8 +95,8 @@
     <!-- END REGISTRATION FORM -->
 </div>
 <div class="copyright">
-   好好学习,天天向上<br/>
-    欢迎使用大管家固定资产管理系统
+    地址：江西省南昌市华东交通大学理工学院 咨询电话：110<br/>
+    HXX科技有限公司 的icp备案号 （沪ICP备16053543号）
 </div>
 
 <!-- END JAVASCRIPTS -->
