@@ -1,5 +1,6 @@
 package com.mage.crm.interceptors;
 
+import com.mage.crm.dao.UserMapper;
 import com.mage.crm.exception.NoLoginException;
 import com.mage.crm.service.UserService;
 import com.mage.crm.util.LoginUserUtil;
@@ -16,6 +17,9 @@ public class NoLoginInterceptor extends HandlerInterceptorAdapter {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private UserMapper userMapper;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -24,7 +28,7 @@ public class NoLoginInterceptor extends HandlerInterceptorAdapter {
          *   如果用户id存在 并且 数据库存在对应用户记录就放行 否则进行拦截
          * */
         int userId = LoginUserUtil.releaseUserIdFromCookie(request);
-        if (userId==0 || userService.selectByPrimaryKey(userId)==null){
+        if (userId==0 || userMapper.selectByPrimaryKey(userId)==null){
             throw new NoLoginException();
         }
         return true;

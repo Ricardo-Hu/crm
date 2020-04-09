@@ -1,6 +1,10 @@
 package com.mage.crm.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.aspectj.lang.ProceedingJoinPoint;
+
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Integer id;
@@ -16,10 +20,30 @@ public class User {
     private String phone;
 
     private Integer isValid;
-
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GTM+8")
     private Date createDate;
-
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GTM+8")
     private Date updateDate;
+
+    private List<Integer> roleIds;
+
+    private String rids;
+
+    public String getRids() {
+        return rids;
+    }
+
+    public void setRids(String rids) {
+        this.rids = rids;
+    }
+
+    public List<Integer> getRoleIds() {
+        return roleIds;
+    }
+
+    public void setRoleIds(List<Integer> roleIds) {
+        this.roleIds = roleIds;
+    }
 
     public Integer getId() {
         return id;

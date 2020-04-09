@@ -13,7 +13,7 @@ function login() {
 
     $.ajax({
         type:"post",
-        url:ctx+"user/login",
+        url:ctx+"/user/login",
         data:{
             userName:userName,
             userPwd:userPwd

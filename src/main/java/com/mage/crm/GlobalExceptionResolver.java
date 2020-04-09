@@ -3,6 +3,7 @@ package com.mage.crm;
 import com.alibaba.fastjson.JSON;
 import com.mage.crm.exception.NoLoginException;
 import com.mage.crm.exception.ParamsException;
+import com.mage.crm.interceptors.AuthFailedException;
 import com.mage.crm.model.ResultInfo;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,6 +58,11 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
                     mv.addObject("msg", pe.getMsg());
                     mv.addObject("code", pe.getCode());
                 }
+                if (ex instanceof AuthFailedException) {
+                    AuthFailedException afe = (AuthFailedException) ex;
+                    mv.addObject("msg", afe.getMsg());
+                    mv.addObject("code", afe.getCode());
+                }
                 return mv;
             } else {
                 /**
@@ -69,6 +75,11 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
                     ParamsException pe = (ParamsException) ex;
                     resultInfo.setCode(pe.getCode());
                     resultInfo.setMsg(pe.getMsg());
+                }
+                if (ex instanceof AuthFailedException) {
+                    AuthFailedException afe = (AuthFailedException) ex;
+                    resultInfo.setCode(afe.getCode());
+                    resultInfo.setMsg(afe.getMsg());
                 }
                 response.setCharacterEncoding("utf-8");
                 response.setContentType("application/json;charset=utf-8");
